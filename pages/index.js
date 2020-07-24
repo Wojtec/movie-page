@@ -1,101 +1,84 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
+
+// Components
+import Navbar from '../Components/Navbar';
+import SideMenu from '../Components/sideMenu';
+import Carousel from '../Components/Carousel';
+import MovieList from '../Components/movieList';
+import Footer from '../Components/Footer';
+
+const MOVIE_DATA = [
+  {
+      id: '1',
+      name: 'The Shawshank Redemption',
+      releaseYear: 1994,
+      description: 'Two imprisoned men bond over a number of years, finding solace ...',
+      rating: 4.8,
+      genre: 'drama',
+      image: 'https://m.media-amazon.com/images/I/71HY+rz3c6L._SS500_.jpg'
+  },
+  {
+      id: '2',
+      name: 'The Dark Knight',
+      releaseYear: 2008,
+      description: 'When the menace known as The Joker emerges from his mysterious past...',
+      rating: 4.7,
+      genre: 'action, crime, drama',
+      image: 'https://m.media-amazon.com/images/I/71+DxQJV92L._SS500_.jpg'
+  },
+  {
+      id: '3',
+      name: 'Lord of the rings',
+      releaseYear: 2004,
+      description: 'A meek Hobbit from the Shire and eight companions set out on a journey...',
+      rating: 4.9,
+      genre: 'adcenture, drama, fantasy',
+      image: 'https://m.media-amazon.com/images/I/81tPNugbTSL._SS500_.jpg'
+  }
+]
 
 
 export default function Home() {
+
   return (
     <div>
     <Head>
       <title>Home</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous" />
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossOrigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossOrigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossOrigin="anonymous"></script>
     </Head> 
-
-    {/* NAVBAR */}
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div className="container">
-        <a href="#" className="navbar-brand">Start bootstrap</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarResponsive">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item active">
-              <a href="#" className="nav-link">
-              Home
-                <span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link">
-                About
-              </a>
-             </li>
-             <li className="nav-item">
-               <a href="#" className="nav-link">
-                 Services
-               </a>
-             </li>
-             <li className="nav-item">
-               <a href="#" className="nav-link">
-                 Contact
-               </a>
-             </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+     
+    <Navbar/>
     {/* Content */}
-    <section className="container">
+    <section className="home-page">
+      <div className="container">
+
       <div className="row">
-      <div className="col-lg-3">
-        <h1 className="my-4">Shop Name</h1>
-        <div className="list-group">
-          <a href="#" className="list-group-item">Category 1</a>
-          <a href="#" className="list-group-item">Category 2</a>
-          <a href="#" className="list-group-item">Category 3</a>
-        </div>
+        <div className="col-lg-3">
+          <SideMenu   />
       </div>
+
       <div className="col-lg-9">
-        <div id="carouselExampleIndicators" className="carousel slide my-4" data-ride="carousel">
-          <ol className="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div className="carousel-inner" role="listbox">
-            <div className="carousel-item active">
-            <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide"/>
-            </div>
-            <div className="carousel-item">
-              <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide"/>
-            </div>
-            <div className="carousel-item">
-              <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide"/>
-            </div>
-          </div>
-          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a  className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </a>
-        </div>
+        <Carousel/>
 
         <div className="row">
 
-          <div className="col-lg-4 col-md-6 mb-4">
-            
-          </div>
+        <MovieList movies = {MOVIE_DATA}/>
+
         </div>
       </div>
      </div>
+     </div>
     </section> 
+    <Footer/>
+    <style jsx>{`
+      .home-page{
+        padding-top: 80px;
+      }
+    `}</style>
     </div>
   )
 }
