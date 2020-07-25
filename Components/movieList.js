@@ -1,19 +1,30 @@
 import React, { Component, Fragment } from "react";
-
+import Link from 'next/link';
 class MovieList extends Component {
 
+shortenText = (text) => {
+    if (text &&text.length > 150 ){
+        return text.substr(0, 150) + '...';
+
+     } 
+     return text;
+}
 
 renderMovies(movies) {    
     return movies.map( movie => 
          (
-            <div className="col-lg-4 col-md-6 mb-4">
+            <div key={movie.id} className="col-lg-4 col-md-6 mb-4">
                 <div className="card h-100">
-                <a href="#"><img src={movie.image} alt="" className="card-img-top"/></a>
+                <Link href={`/movies/${ movie.id }`}>
+                <a><img src={movie.image} alt="" className="card-img-top"/></a>
+                </Link>
                 <div className="card-body">
                     <h4 className="card-title">
-                    <a href="#">{movie.name}</a>
+                    <Link href={`/movies/${ movie.id }`}>
+                    <a>{movie.name}</a>
+                    </Link>
                     </h4>
-                    <p className="card-text">{movie.description}</p>
+                    <p className="card-text">{this.shortenText(movie.description)}</p>
                 </div>
                 <div className="card-footer">
                     <small className="text-muted">{movie.rating}</small>
