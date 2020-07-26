@@ -1,13 +1,25 @@
 import Modal from '../Components/modal'
-import MovieCreateForm from './movieCreateForm';
 import MovieCreateFrom from './movieCreateForm';
-const SideMenu = (props) =>{
+import { createMovie } from '../actions';
+import { useRouter } from 'next/router';
 
+const SideMenu = (props) =>{
     const { categories } = props;
+    const router = useRouter();
+    let modal = null;
+
+    const handleCreateMovie = (movie) => {
+        createMovie(movie).then(movies => {
+            modal.closeModal();
+            router.push('/');
+
+
+        })
+    }
     return(
         <div>
-        <Modal>
-            <MovieCreateFrom />
+        <Modal ref={(ele) => modal = ele} hasSubmit={false}>
+            <MovieCreateFrom  handleFormSubmit={handleCreateMovie}/>
         </Modal>
             <h1 className="my-4">Shop Name</h1>
             <div className="list-group">

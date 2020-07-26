@@ -46,7 +46,8 @@ Home.getInitialProps = async () => {
   const images = movies.map(movie => ({
     id: `image-${movie.id}`,
     url: movie.cover,
-    name: movie.name
+    name: movie.name,
+    rating: movie.rating,
   }))
 
    return {
