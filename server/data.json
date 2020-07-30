@@ -28,18 +28,8 @@
     "description": "The former Fellowship members prepare for the final battle. While Frodo and Sam approach Mount Doom to destroy the One Ring, they follow Gollum unaware of the path he is leading them to.",
     "longDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nihil ipsa asperiores ducimus fuga. Fugit provident, voluptatum, velit eligendi repudiandae aperiam ab quia voluptas saepe explicabo aliquam. Quam, voluptatibus amet?",
     "rating": 4.9,
-    "genre": "adcenture, drama, fantasy",
+    "genre": "adventure, drama, fantasy",
     "image": "https://m.media-amazon.com/images/I/81tPNugbTSL._SS500_.jpg",
     "cover": "https://i.ytimg.com/vi/ZLjKYj0NWmM/maxresdefault.jpg"
-  },
-  {
-    "name": "Scooby-Doo",
-    "description": "W pierwszej kinowej animacji ze Scooby-Doo w roli głównej poznamy nowe wątki, dotyczące pochodzenia uroczego psiaka.",
-    "rating": "4",
-    "image": "https://es.web.img2.acsta.net/c_215_290/pictures/20/06/17/13/39/2095384.jpg",
-    "cover": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2019/03/scooby%20doo.jpg?itok=37GeU1B3",
-    "longDesc": "W pierwszej kinowej animacji ze Scooby-Doo w roli głównej poznamy nowe wątki, dotyczące pochodzenia uroczego psiaka. Zobaczymy też najbardziej zawiłe śledztwo w historii Tajemniczej Spółki. \"Scooby-Doo!\" pokazuje początki wieloletniej przyjaźni Scooby’ego i Kudłatego. Dowiemy się, jak wspólnie z Fredem, Velmą i Daphne założyli oni słynną Tajemniczą Spółkę. Teraz, po setkach śledztw i przygód, Scooby i jego gang stają w obliczu największego i najtrudniejszego wyzwania. Ktoś chce uwolnić psa z zaświatów, Cerbera. Młodzi detektywi starają się powstrzymać globalną \"apsokalipsę\". Jednocześnie odkrywają sekrety z przeszłości Scooby’ego i poznają jego przeznaczenie – wspanialsze, niż ktokolwiek sobie wyobrażał.",
-    "genre": "adventure,historical,action",
-    "id": "in2fuld"
   }
 ]

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const MovieCreateFrom = (props) => {
 
@@ -10,9 +10,9 @@ const MovieCreateFrom = (props) => {
         cover: '',
         longDesc: ''
     }
+
     const formData = props.initialData ? {...props.initialData} : defaultData;
     const [form, setForm ] = useState(formData);
-
 
     const handleChange = (e) =>{
         const target = e.target;
@@ -49,82 +49,98 @@ const MovieCreateFrom = (props) => {
     return(
         <form>
             <div className="form-group">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">
+                    Name
+                </label>
                 <input 
-                onChange={handleChange}
-                value={form.name}
-                name="name"
-                type="text" 
-                className="form-control" 
-                id="name" 
-                aria-describedby="name" 
-                placeholder="Name"/>
+                    onChange={handleChange}
+                    value={form.name}
+                    name="name"
+                    type="text" 
+                    className="form-control" 
+                    id="name" 
+                    aria-describedby="name" 
+                    placeholder="Name"
+                />
             </div>
             <div className="form-group">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description">
+                    Description
+                </label>
                 <input 
-                onChange={handleChange}
-                value={form.description}
-                name="description"
-                type="text" 
-                className="form-control" 
-                id="description" 
-                placeholder="Some text"/>
+                    onChange={handleChange}
+                    value={form.description}
+                    name="description"
+                    type="text" 
+                    className="form-control" 
+                    id="description" 
+                    placeholder="Some text"
+                />
             </div>
             <div className="form-group">
-                <label htmlFor="rating">Rating</label>
+                <label htmlFor="rating">
+                    Rating
+                </label>
                 <input 
-                onChange={handleChange}
-                value={form.rating}
-                name="rating"
-                type="number" 
-                max="5" 
-                min="0" 
-                className="form-control" 
-                id="rating" 
-                placeholder="Rating"/>
+                    onChange={handleChange}
+                    value={form.rating}
+                    name="rating"
+                    type="number" 
+                    max="5" 
+                    min="0" 
+                    className="form-control" 
+                    id="rating" 
+                    placeholder="Rating"
+                />
                 <small id="smallRating" className="form-text text-muted">Max: 5, Min: 0</small>
             </div>
             <div className="form-group">
-                <label htmlFor="image">Image</label>
+                <label htmlFor="image">
+                    Image
+                </label>
                 <input 
-                onChange={handleChange}
-                value={form.image}
-                name="image"
-                type="text" 
-                className="form-control" 
-                id="image" 
-                placeholder="http://...."/>
+                    onChange={handleChange}
+                    value={form.image}
+                    name="image"
+                    type="text" 
+                    className="form-control" 
+                    id="image" 
+                    placeholder="http://...." 
+                />
             </div>
             <div className="form-group">
                 <label htmlFor="cover">Cover</label>
                 <input 
-                onChange={handleChange}
-                value={form.cover}
-                name="cover"
-                type="text" 
-                className="form-control" 
-                id="cover" 
-                placeholder="http://...."/>
+                    onChange={handleChange}
+                    value={form.cover}
+                    name="cover"
+                    type="text" 
+                    className="form-control" 
+                    id="cover" 
+                    placeholder="http://...."
+                />
             </div>
             <div className="form-group">
-                <label htmlFor="longDesc">Long Description</label>
+                <label htmlFor="longDesc">
+                    Long Description
+                </label>
                 <textarea
-                onChange={handleChange}
-                value={form.longDesc}
-                name="longDesc"
-                className="form-control" 
-                id="longDesc" 
-                rows="3"></textarea>
+                    onChange={handleChange}
+                    value={form.longDesc}
+                    name="longDesc"
+                    className="form-control" 
+                    id="longDesc" 
+                    rows="3"
+                ></textarea>
             </div>
             <div className="form-group">
                 <label htmlFor="genre">Genre</label>
                 <select 
-                onChange={handleGenreChange}
-                name="genre"
-                multiple 
-                className="form-control" 
-                id="genre">
+                    onChange={handleGenreChange}
+                    name="genre"
+                    multiple 
+                    className="form-control" 
+                    id="genre">
                     <option>drama</option>
                     <option>music</option>
                     <option>adventure</option>
@@ -133,9 +149,11 @@ const MovieCreateFrom = (props) => {
                 </select>
             </div>
             <button 
-            onClick={submitForm} 
-            type="button" 
-            className="btn btn-primary">{props.submitButton || 'Create'}</button>
+                onClick={submitForm} 
+                type="button" 
+                className="btn btn-primary">
+                {props.submitButton || 'Create'}
+            </button>
         </form>
 
     )
