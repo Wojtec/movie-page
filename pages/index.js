@@ -36,7 +36,7 @@ export default function Home(props) {
       <div>
           {/* Content */}
           <section className="home-page">
-            <div className="container-fluid">
+            <div className="container">
               <div>
                 <div className="row">
                   <div className="col-lg-3">

@@ -30,12 +30,6 @@ render() {
                     <Component {...pageProps} />
                 </div>
                 <Footer/>
-                <style jsx>{`
-                    .base-page{
-                    padding-top: 100px;
-                    padding-bottom: 200px;
-                    }
-                `}</style>
             </div>
         )
     }
